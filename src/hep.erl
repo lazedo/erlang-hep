@@ -99,8 +99,17 @@ version (Hep) ->
 
 
 %% Note: you can't have a dot inside a macro definition!
--define(getter(Field), Field(#hep{Field = Val}) -> Val).
+-define(getter(Field),Field(#hep{Field = Val}) -> Val).
 -define(setter(Field), Field(Val, Hep) -> Hep#hep{Field = Val}).
+
+-spec payload(hep:t()) -> binary().
+-spec timestamp(hep:t()) -> erlang:timestamp().
+
+-spec src_ip(hep:t()) -> inet:ip_address().
+-spec dst_ip(hep:t()) -> inet:ip_address().
+
+-spec src_port(hep:t()) -> inet:port_number().
+-spec dst_port(hep:t()) -> inet:port_number().
 
 new () -> #hep{}.
 ?getter(protocol_family).
