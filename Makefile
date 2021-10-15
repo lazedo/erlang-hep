@@ -1,3 +1,3 @@
 PROJECT = hep
 
-include erlang.mk
+include ../../erlang.mk
